@@ -8,7 +8,9 @@ def main():
     pipe = load_stable_diffusion_model(model_id)
 
     prompt = "a photo of an astronaut riding a horse on mars"
-    image = pipe(prompt).images[0]
+
+    image = pipe(prompt, num_inference_steps=100).images[0]
+
 
     plt.imshow(image)
     plt.axis('off')
