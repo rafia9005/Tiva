@@ -1,3 +1,7 @@
+<div align="center">
+    <img src="https://github.com/user-attachments/assets/fc415835-6b5b-4966-97b0-d67fbc97629f" alt="image" />
+</div>
+
 # Tiva: Text-to-Image Generation
 
 Tiva is a powerful and easy-to-use tool for generating images from text descriptions using AI. Leveraging the Stable Diffusion model, Tiva allows users to input a text prompt and generate high-quality images with customizable settings.
