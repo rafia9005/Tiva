@@ -1,18 +1,18 @@
-import torch
-from diffusers import StableDiffusionPipeline
+import matplotlib.pyplot as plt
+from models.utils import load_stable_diffusion_model
 
-# load model and scheduler
-model_id = "CompVis/stable-diffusion-v1-4"
-# if you dont have vgs
-pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float32, safety_checker=None).to("cpu")
+def main():
+    model_id = "CompVis/stable-diffusion-v1-4"
+    
+    # Memuat model menggunakan fungsi dari utils.py
+    pipe = load_stable_diffusion_model(model_id)
 
-# if use vga
-# pipe = StableDiffusionPipeline.from_pretrained(model_id, torch_dtype=torch.float32, safety_checker=None).to("cuda")
-
-# generate image with prompt
-def generate_image(prompt):
+    prompt = "a photo of an astronaut riding a horse on mars"
     image = pipe(prompt).images[0]
-    return image
 
-prompt = "Sebuah pemandangan gunung di bawah sinar matahari"
-generated_image = generate_image(prompt)
+    plt.imshow(image)
+    plt.axis('off')
+    plt.show()
+
+if __name__ == "__main__":
+    main()
