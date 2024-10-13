@@ -6,7 +6,6 @@ def main():
     
     pipe = load_stable_diffusion_model(model_id)
 
-    # Membuat antarmuka pengguna
     create_ui(pipe)
 
 if __name__ == "__main__":
